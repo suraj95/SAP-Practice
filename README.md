@@ -1,8 +1,8 @@
 # SAP-Practice
 
-![alt text](./images/Architecture.png)
-
 In any typical SAP implementation, at the top is the Presentation server, which is any input device that can be used to control an SAP system (the diagram shows the SAP GUI, but this could equally be a web browser, a mobile device, and so on). The Presentation layer communicates with the Application server, and the Application server is the 'brains' of an SAP system, where all the central processing takes place. The Application server is not just one system in itself, but can be made up of multiple instances of the processing system. The Application server, in turn, communicates with the Database layer. The Database is kept on a separate server, mainly for performance reasons, but also for security, providing a separation between the different layers of the system. Communication happens between each layer of the system, from the Presentation layer, to the Application server, to the Database, and then back up the chain, through the Application server again, for further processing, until finally reaching the Presentation layer.
+
+![alt text](./images/Architecture.png)
 
 # Environment for Programs
 
