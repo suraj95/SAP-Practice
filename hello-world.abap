@@ -1,5 +1,5 @@
 * My First ABAP Program 
 
-REPORT Z_Suraj_Practice
+REPORT Z_Suraj_Practice		.
 
-write 'Hello SAP World' .
+write 'Hello SAP World'.
