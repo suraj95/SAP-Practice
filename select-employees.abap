@@ -8,7 +8,7 @@ SELECT * FROM zemployees.	" Basic Select Loop with Line Break
 	WRITE zemployees.
 ENDSELECT.
 
-ULINE. 						" Make an underline
+ULINE. 		
 
 SELECT * FROM zemployees.	" Basic Select Loop with LINE-BREAK
 	WRITE / zemployees. 
@@ -20,6 +20,8 @@ SKIP 2.
 SELECT * FROM zemployees.	" Basic Select Loop with a SKIP Statement
 	WRITE zemployees.
 ENDSELECT.
+
+ULINE.
 
 SELECT * FROM zemployees.	" Basic Select Loop with individual fields
 	WRITE / zemployees-surname.
