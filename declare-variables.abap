@@ -13,7 +13,7 @@ DATA new_surname LIKE zemployees-surname.
 
 * If you do try to change a Constant’s value within the program, this will usually result in a runtime error.
 
-constants myconstant01 type p decimal 1 value '6.6'.
+constants myconstant01 type p decimals 1 value '6.6'.
 constants myconstant02 type i value 6.
 
 
