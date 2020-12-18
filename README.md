@@ -37,3 +37,5 @@ Beginners Guide to SAP ABAP by Peter Moxon
 
 [Add ABAP Package to Sublime Text](https://github.com/PavelJaros/ABAP-Sublime-Plugin)
 
+[If Sublime Text deletes your installed package automatically](https://stackoverflow.com/questions/29257763/sublime-text-3-deleted-my-folder-under-packages)
+
