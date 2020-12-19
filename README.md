@@ -29,6 +29,31 @@ The Database Interface is the third important element. It is a set of ABAP state
 
 There are times when you may want to use a specific SQL statement native to the database which is installed. ABAP is designed in such a way that if this type of coding is necessary, this facility is available. It is possible to directly access the Database through the programs using native SQL statements, but this is not encouraged. Normally, when systems are set up, the system administrator will forbid these practices, due to the security and stability risks to the system which may be introduced. **If you are going to be programming ABAP, make sure Open SQL is used, because then anyone subsequently looking at the programs will understand what is trying to be achieved.**
 
+## ABAP Workbench
+
+Like many other programming languages, ABAP programs are normally structured into two parts:-
+
+1. Declaration Section: This is where you define the data types, structures, tables, work area variables and the individual fields to be used inside the programs. This is also where you would declare global variables that will be available throughout the individual subsections of the program. 
+
+2. Processing Blocks: This is where all of the logic for the program will be written. They are small sections of programming logic which allow the code to be encapsulated and can also be called from the Dynpro processor depending on the specific rules created within the program.
+
+## ABAP Editor
+
+The ABAP Editor is where all of the code is created, the logic built and, by using forward navigation, function modules defined, screens created and so on. The ABAP Editor can be found under the 'Development' menu, as shown above and with transaction code SE38.
+
+## Function Builder
+
+The Function Builder is similar to ABAP Editor and its main function is to define specific tasks that can be called from any other program. Interfaces are created in the Function Builder, where the different data elements and different types of tables are defined, that can be passed to and from the Function which is built. The Function Builder will be discussed a little later on, when the programs created are encapsulated into function modules. The Function Builder can be called with transaction code SE37.
+
+## Menu Painter
+
+The next item to look at here is called the Menu Painter, which can be found in the 'User Interface' folder inside the 'Development' menu, or with transaction code SE41. This is a tool which can be used to generate menu options, buttons, icons, menu bars, transaction input fields, all of which can trigger events within the program. You can define whether events are triggered using a mouse click, or with a keyboard-based shortcut.
+
+## Screen Painter
+
+While the Menu Painter is used for building menu items, menu bars and so on, the next item on the list is the Screen Painter allows you to define the user input screen, meaning that you can define text boxes, drop-down menus, list boxes, input fields, tabbed areas of the screen and so on.  It has transaction code SE51, and allows you to define the whole interface which the user will eventually use, and behind the initial elements that are put on the screen, you can also define the individual functions which are called when the user interacts with them.
+
+
 # References
 
 Beginners Guide to SAP ABAP by Peter Moxon
