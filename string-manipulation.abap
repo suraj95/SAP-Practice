@@ -5,7 +5,8 @@ DATA: title(15) TYPE c VALUE 'Mr',
       destination(200) TYPE c,
       spaced_name(20) TYPE c VALUE 'Mr    Joe    Smith',
       len TYPE i,
-      surname2(40). "the type is not defined so default will be set (Type c)
+      surname2(40), "the type is not defined so default will be set (Type c)
+      empl_num(10).
 
 * Concatenate
 
@@ -59,9 +60,11 @@ SEARCH surname2 for 'Smi*'. "this time to search for words beginning with ‘Smi
 WRITE: / 'sy-subrc: ',sy-subrc, / 'sy-fdpos: ', sy-fdpos.
 ULINE.
 
+* Shift
 
-
-
+empl_num = '0000654321'.
+SHIFT empl_num LEFT DELETING LEADING '0'.
+WRITE empl_num. "654321
 
 
 
