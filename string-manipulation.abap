@@ -40,9 +40,24 @@ REPLACE ',' WITH '.' INTO surname2.
 WRITE / surname2. "Mr. Joe Smith
 ULINE.
 
+* Search
 
+surname2 = 'Mr Joe Smith'.
+SEARCH surname2 for 'Joe'.
+WRITE: / 'sy-subrc: ', sy-subrc , / 'sy-fdpos: ', sy-fdpos. "sy-subrc identifies whether the search was successful or not, and sy-fdpos is set to the position of the character string searched for in surname2
+ULINE. " When the sy-subrc = 0 this refers to a successful search. When sy-subrc = 4 this indicates that the search was unsuccessful.
 
+SEARCH surname2 for '.Joe   .'. "this time, the system will search for the full string, including the blanks
+WRITE: / 'sy-subrc: ',sy-subrc, / 'sy-fdpos: ', sy-fdpos.
+ULINE.
 
+SEARCH surname2 for '*ith'. "this time, we use a wild card character ‘*’ and will search for any words ending in ‘ith’
+WRITE: / 'sy-subrc: ',sy-subrc, / 'sy-fdpos: ', sy-fdpos.
+ULINE.
+
+SEARCH surname2 for 'Smi*'. "this time to search for words beginning with ‘Smi’, which again should be successful.
+WRITE: / 'sy-subrc: ',sy-subrc, / 'sy-fdpos: ', sy-fdpos.
+ULINE.
 
 
 
