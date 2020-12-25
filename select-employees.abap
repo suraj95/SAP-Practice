@@ -16,6 +16,8 @@ ENDSELECT.
 
 ULINE. 
 
+BREAK-POINT. "forces the program to enter debug mode at the specific line chosen.
+
 SKIP 2. 
 SELECT * FROM zemployees.	" Basic Select Loop with a SKIP Statement
 	WRITE zemployees.
