@@ -59,7 +59,7 @@ DATA clock_in TYPE t.
 DATA clock_out TYPE t.
 DATA seconds_diff TYPE i.
 DATA minutes_diff TYPE i.
-DATA hours_diff TYPE i.
+DATA hours_diff TYPE p decimals 2. 
 
 clock_in = '073000'. "7:30 AM
 clock_out = '160000'. "4:00 PM
@@ -68,6 +68,13 @@ seconds_diff = clock_out - clock_in. "8 hours and 30 minutes = 30,600 seconds
 WRITE: 'clock_in: ', clock_in, ' clock_out: ', clock_out.
 WRITE / seconds_diff.
 
+minutes_diff = seconds_diff / 60.
+WRITE: / 'differences in minutes: ', minutes_diff.
+
+hours_diff = minutes_diff / 60.
+WRITE: / 'differences in hours: ', hours_diff.
+
+* if hours_diff is left as an integer, then 8.5 hours is automatically rounded off to 9.
 
 
 
