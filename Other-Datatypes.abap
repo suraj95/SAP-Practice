@@ -25,6 +25,8 @@ uline.
 * periods in the formatting. This also applies to the my_time2 field, where colons have 
 * appeared between the places where the time values would ordinarily be.
 
+* Date Fields in Calculations
+
 DATA empl_date TYPE d.
 DATA todays_date TYPE d.
 DATA fut_date TYPE d.
@@ -32,24 +34,40 @@ DATA fut_date TYPE d.
 DATA los TYPE i.
 DATA days_count TYPE i.
 
-empl_date = '20090515'.
-todays_date = SY-DATUM. "set to todays date
+empl_date = '20090515'. "15th May, 2009 
+todays_date = SY-DATUM. "set to todays date (5th Jan, 2021)
 
 los = todays_date - empl_date.
 WRITE / los.
 
 days_count = 20.
 fut_date = todays_date + days_count. 
-WRITE / fut_date. "print date 20 days from now
+WRITE / fut_date. "print date 20 days from now (25th Jan, 2021)
 
 todays_date+6(2) = '20'. "change two characters from the 6th digit
 WRITE / SY-DATUM.
-WRITE / todays_date."print current date with day changed to 20
+WRITE / todays_date."print current date with day changed to 20 (20th Jan, 2021)
 
 todays_date+6(2) = '01'. "change two characters from the 6th digit
 WRITE / SY-DATUM.
 todays_date = todays_date - 1. "subtract 1 day from current month
-WRITE / todays_date. "print last date of previous month
+WRITE / todays_date. "print last date of previous month (31st December, 2020)
+
+* Time Fields in Calculations
+
+DATA clock_in TYPE t.
+DATA clock_out TYPE t.
+DATA seconds_diff TYPE i.
+DATA minutes_diff TYPE i.
+DATA hours_diff TYPE i.
+
+clock_in = '073000'. "7:30 AM
+clock_out = '160000'. "4:00 PM
+seconds_diff = clock_out - clock_in. "8 hours and 30 minutes = 30,600 seconds
+
+WRITE: 'clock_in: ', clock_in, ' clock_out: ', clock_out.
+WRITE / seconds_diff.
+
 
 
 
