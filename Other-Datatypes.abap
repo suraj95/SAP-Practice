@@ -1,5 +1,6 @@
 REPORT Z_Other_data_types. "Remove this line in online ABAP Editor
 
+
 * Date fields format: YYYYMMDD with initial value of '00000000' 
 DATA my_date TYPE d VALUE '20120101'.
 
@@ -17,6 +18,7 @@ WRITE: my_date,  "01012012
      / my_date2, "00.00.0000    
      / my_time,  "111005
      / my_time2. "00:00:00
+uline.
 
 * Note that in the first row the my_date field has reversed itself to the format DDMMYYYY. 
 * In the second, no value was assigned to the field, so the system has output the default 
