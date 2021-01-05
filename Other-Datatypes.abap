@@ -27,13 +27,29 @@ uline.
 
 DATA empl_date TYPE d.
 DATA todays_date TYPE d.
+DATA fut_date TYPE d.
+
 DATA los TYPE i.
+DATA days_count TYPE i.
 
 empl_date = '20090515'.
 todays_date = SY-DATUM. "set to todays date
+
 los = todays_date - empl_date.
 WRITE / los.
 
+days_count = 20.
+fut_date = todays_date + days_count. 
+WRITE / fut_date. "print date 20 days from now
+
+todays_date+6(2) = '20'. "change two characters from the 6th digit
+WRITE / SY-DATUM.
+WRITE / todays_date."print current date with day changed to 20
+
+todays_date+6(2) = '01'. "change two characters from the 6th digit
+WRITE / SY-DATUM.
+todays_date = todays_date - 1. "subtract 1 day from current month
+WRITE / todays_date. "print last date of previous month
 
 
 
