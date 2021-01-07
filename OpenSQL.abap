@@ -23,9 +23,15 @@ wa_employees-title = 'DR'.
 
 CLEAR wa_employees. "clears the whole work area
 
+* UPDATE Statement
 
+wa_employees-employee = '10000029'.
+wa_employees-surname = 'EASTMORE'.
+wa_employees-forename = 'ANDY'.
+wa_employees-title = 'SIR'.
+wa_employees-dob = '19324213'.
 
-
+UPDATE zemployees FROM wa_employees.
 
 
 
