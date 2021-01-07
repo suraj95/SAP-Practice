@@ -1,4 +1,4 @@
-* Insert Statement
+* INSERT Statement
 
 DATA wa_employees LIKE zemployees.
 
@@ -15,6 +15,20 @@ IF sy-subrc = 0.
 ELSE.
   WRITE: 'We have return code of ', sy-subrc.
 ENDIF.
+
+* CLEAR Statement
+
+CLEAR wa_employees-title. "clears the title 
+wa_employees-title = 'DR'.
+
+CLEAR wa_employees. "clears the whole work area
+
+
+
+
+
+
+
 
 
 
