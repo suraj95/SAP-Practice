@@ -72,6 +72,29 @@ ELSE.
   WRITE: 'We have return code of ', sy-subrc.
 ENDIF.
 
+* DELETE Statement
+
+CLEAR wa_employees.
+
+wa_employees-employee = '10000007'. "Identify record for Susan Southmore using primary key
+
+DELETE zemployees FROM wa_employees. 
+
+* The FROM addition in the last line ensures only the record referred to by its key field in the work area will be deleted. 
+
+CLEAR wa_employees.
+
+DELETE zemployees FROM wa_employees WHERE surname = 'BROWN'.
+
+IF sy-subrc = 0.
+  WRITE: / '2 Records deleted correctly'.
+ELSE.
+  WRITE: / 'We have return code of ', sy-subrc.
+ENDIF.
+
+
+
+
 
 
 
