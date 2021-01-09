@@ -7,9 +7,17 @@ surname = 'SMITH'.
 
 IF surname = 'SMITH'.
   WRITE 'You have won a car!'.
-* ELSE IF f3 OP f4.
-* .................
+ELSEIF surname = 'BROWN'.
+  WRITE 'You have won a boat!'.
+ELSEIF surname = 'JONES'.
+  WRITE 'You have won a plane!'.
+ELSEIF surname = 'ANDREWS'.
+  WRITE 'You have won a house!'.
+ELSE.
+  WRITE 'Unlucky! You go empty-handed'.
 ENDIF.
+
+
 
 
 
