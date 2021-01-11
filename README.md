@@ -6,6 +6,8 @@ In any typical SAP implementation, at the top is the Presentation server, which 
 
 # Environment for Programs
 
+![alt text](./images/selection-screen.png)
+
 Next, we have the environment which programs run in, the Work Processes, and the structure of an ABAP program. **Within an SAP system, or at least the example used here, there are two types of programs, Reports and Dynpro’s.** 
 
 Reports, as the name would suggest, are programs which generate lists of data. They may involve a small amount of interactivity, but mainly they supply data to the front-end interfaces, the SAP GUI and so on. When a user runs a report, they typically get a selection screen. Once they enter their selection parameters and execute the report, they normally cannot intervene in the execution of the program. The program runs, and then displays the output. Dynpro’s are slightly different. They are dynamic programs, and allow the user to intervene in the execution of the program, by processing a series of screens, called Dialogue screens. The user determines the flow of the program itself by choosing which buttons or fields to interact with on the screen. Their action then triggers different functions which have been coded within the flow logic of the program. While reports are being created, interfaces are also to be generated which are classed as Dynpro’s, for all the selection criteria. 
