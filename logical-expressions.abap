@@ -140,7 +140,7 @@ ENDDO.
 
 DO 15 TIMES.
   a = a + 1.
-  CHECK sy-index <> 2.
+  CHECK sy-index <> 2. "a combination of the IF and CONTINUE statements.
   WRITE: / 'Outer Loop cycle: ', a.
 ENDDO.
 
@@ -149,9 +149,9 @@ ENDDO.
 DO 15 TIMES.
   a = a + 1.
   IF sy-index = 3.
-    EXIT.
+    EXIT. "terminates the loop entirely once it is reached. 
   ENDIF.
-  WRITE: / 'Outer Loop cycle: ', a.
+  WRITE: / 'Outer Loop cycle: ', a. 
 ENDDO
 WRITE: / 'FILLER'.
 WRITE: / 'FILLER'.
