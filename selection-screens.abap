@@ -41,6 +41,7 @@ AT SELECTION-SCREEN ON my_ee.
 TABLES: zemployees, ZEMPLOYEES2.
 
 PARAMETERS: my_ee LIKE zemployees-employee DEFAULT '123456789' OBILIGATORY, "A small tickbox will appear in the field when empty, to indicate that a value must be inserted here.
+            my_surn LIKE zemployees-surname DEFAULT 'BLOGS' LOWER CASE,
             my_dob LIKE zemployees-dob,
             my_g LIKE zemployees2-gender VALUE CHECK, "it will check any entry against the valid value list which is created in the ABAP dictionary
             my_numbr LIKE type i.
