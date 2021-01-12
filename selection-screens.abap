@@ -31,10 +31,19 @@ INITIALIZATION.
   ENDSELECT.
 
 AT SELECTION-SCREEN ON my_ee.
-* Check to make sure the employee number is not greater than the last employee number in table
-  IF my_ee > wa_employee.
-* Display a Message
+  IF my_ee > wa_employee. "Check if employee number is greater than the last employee number in table
+    WRITE: / 'Employee not found!'. "Display a Message
   ENDIF.
+
+
+* Parameter Statement
+
+TABLES: zemployees, ZEMPLOYEES2.
+
+PARAMETERS: my_ee LIKE zemployees-employee DEFAULT '123456789' OBILIGATORY, "A small tickbox will appear in the field when empty, to indicate that a value must be inserted here.
+            my_dob LIKE zemployees-dob,
+            my_g LIKE zemployees2-gender VALUE CHECK, "it will check any entry against the valid value list which is created in the ABAP dictionary
+            my_numbr LIKE type i.
 
 
 
