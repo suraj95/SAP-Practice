@@ -73,7 +73,10 @@ WRITE: / text-001. "placeholder for text (defined inside text elements)
 
 PARAMETERS: my_ee LIKE zemployees-employee DEFAULT '123456789' OBILIGATORY.  
 
-SELECTION-SCREEN SKIP.
+SELECTION-SCREEN SKIP 2.
+SELECTION-SCREEN SKIP ULINE.
+SELECTION-SCREEN SKIP. "no value entered so default 1 line will be skipped
+
 
 PARAMETERS:             my_box1 as checkbox, "the PARAMETERS chain is now broken, so another PARAMETERS statement must be added
             wa_green RADIOBUTTON GROUP grp1,
