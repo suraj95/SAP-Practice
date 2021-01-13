@@ -32,7 +32,7 @@ INITIALIZATION.
 
 AT SELECTION-SCREEN ON my_ee.
   IF my_ee > wa_employee. "Check if employee number is greater than the last employee number in table
-    WRITE: / 'Employee not found!'. "Display a Message
+    MESSAGE e000(ZMES1) with my_ee. " Text Message (stored in table T100)
   ENDIF.
 
 
@@ -68,6 +68,19 @@ WRITE: / 'Surname'.
 
 WRITE: / text-001. "placeholder for text (defined inside text elements)
 
+
+* SKIP LINES and UNDERLINE
+
+PARAMETERS: my_ee LIKE zemployees-employee DEFAULT '123456789' OBILIGATORY.  
+
+SELECTION-SCREEN SKIP.
+
+PARAMETERS:             my_box1 as checkbox, "the PARAMETERS chain is now broken, so another PARAMETERS statement must be added
+            wa_green RADIOBUTTON GROUP grp1,
+            wa_blue  RADIOBUTTON GROUP grp2,
+            wa_red   RADIOBUTTON GROUP grp3.
+
+SELECT-OPTIONS my_dob FOR zemployees-dob NO-EXTENSION.
 
 
 
