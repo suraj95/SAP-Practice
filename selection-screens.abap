@@ -77,7 +77,6 @@ SELECTION-SCREEN SKIP 2.
 SELECTION-SCREEN SKIP ULINE.
 SELECTION-SCREEN SKIP. "no value entered so default 1 line will be skipped
 
-
 PARAMETERS:             my_box1 as checkbox, "the PARAMETERS chain is now broken, so another PARAMETERS statement must be added
             wa_green RADIOBUTTON GROUP grp1,
             wa_blue  RADIOBUTTON GROUP grp2,
