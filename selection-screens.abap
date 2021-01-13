@@ -76,6 +76,7 @@ PARAMETERS: my_ee LIKE zemployees-employee DEFAULT '123456789' OBILIGATORY.
 SELECTION-SCREEN SKIP 2.
 SELECTION-SCREEN SKIP ULINE.
 SELECTION-SCREEN SKIP. "no value entered so default 1 line will be skipped
+SELECTION-SCREEN ULINE /40(8). "sets the position of the line to the 40th character from the left of the screen, and its length is set to 8 characters
 
 PARAMETERS:             my_box1 as checkbox, "the PARAMETERS chain is now broken, so another PARAMETERS statement must be added
             wa_green RADIOBUTTON GROUP grp1,
