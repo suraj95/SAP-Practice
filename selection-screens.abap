@@ -50,6 +50,7 @@ PARAMETERS: my_ee LIKE zemployees-employee DEFAULT '123456789' OBILIGATORY, "A s
             my_g LIKE zemployees2-gender VALUE CHECK, "it will check any entry against the valid value list which is created in the ABAP dictionary
             my_numbr LIKE type i.
 
+
 * SELECT-OPTIONS Example
 
 SELECT-OPTIONS my_dob FOR zemployees-dob NO-EXTENSION.
@@ -58,7 +59,15 @@ SELECT * FROM zemployees.
   IF zemployees-dob in my_dob.
     WRITE: / zemployees.
   ENDIF.
-ENDSELECT. 
+ENDSELECT.
+
+
+* TEXT Symbols
+
+WRITE: / 'Surname'.
+
+WRITE: / text-001. "placeholder for text (defined inside text elements)
+
 
 
 
