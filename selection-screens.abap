@@ -106,6 +106,7 @@ SELECTION-SCREEN POSITION 30.
 SELECTION-SCREEN POSITION pos_high. "The default positions of parameters and select-options on the screen are referred to as ‘position low’ for the left hand side
 SELECTION-SCREEN END OF LINE.
 
+
 * ELEMENT BLOCKS
 
 SELECTION-SCREEN BEGIN OF BLOCK myblock1 WITH FRAME TITLE text-001.
