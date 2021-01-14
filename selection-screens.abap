@@ -66,7 +66,7 @@ ENDSELECT.
 
 WRITE: / 'Surname'.
 
-WRITE: / text-001. "placeholder for text (defined inside text elements)
+WRITE: / text-001. "placeholder for text (defined inside text elements -> text symbols)
 
 
 * SKIP LINES and UNDERLINE
@@ -94,6 +94,17 @@ SELECTION-SCREEN COMMENT /40(15) comm1.
 INITIALIZATION.
   
   comm1 = 'Hello SAP'. "it is initialised when the program starts.
+
+
+* Format a Line and Position
+
+SELECTION-SCREEN BEGIN OF LINE. "Anything appearing between these statements will now all appear on the same line. 
+SELECTION-SCREEN COMMENT 1(15) text-001.
+SELECTION-SCREEN COMMENT 20(10) comm1.
+PARAMETER ABC(5).
+SELECTION-SCREEN POSITION 30.
+SELECTION-SCREEN POSITION pos_high. "The default positions of parameters and select-options on the screen are referred to as ‘position low’ for the left hand side
+SELECTION-SCREEN END OF LINE.
 
 
 
