@@ -86,6 +86,17 @@ PARAMETERS:             my_box1 as checkbox, "the PARAMETERS chain is now broken
 SELECT-OPTIONS my_dob FOR zemployees-dob NO-EXTENSION.
 
 
+* COMMENTS
+
+SELECTION-SCREEN COMMENT /40(15) text-001. "Comments allow text to be placed on screen without creating new fields.
+SELECTION-SCREEN COMMENT /40(15) comm1.
+
+INITIALIZATION.
+  
+  comm1 = 'Hello SAP'. "it is initialised when the program starts.
+
+
+
 
 
 
