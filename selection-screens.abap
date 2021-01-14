@@ -10,7 +10,7 @@ DATA: wa_employee LIKE zemployees-employee.
 INITIALIZATION.
 
   SELECT * FROM zemployees.
-    wa_employee = zemployees-employee. " Work Area is reset after every loop pass
+    wa_employee = zemployees-employee. "Work Area is reset after every loop pass
   ENDSELECT.
 
 WRITE: / wa_employees-employee. "Write data of last employee (earlier ones are lost)
@@ -32,7 +32,7 @@ INITIALIZATION.
 
 AT SELECTION-SCREEN ON my_ee.
   IF my_ee > wa_employee. "Check if employee number is greater than the last employee number in table
-    MESSAGE e000(ZMES1) with my_ee. " Text Message (stored in table T100)
+    MESSAGE e000(ZMES1) with my_ee. "Text Message (stored in table T100)
   ENDIF.
 
 
