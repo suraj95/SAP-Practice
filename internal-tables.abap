@@ -52,6 +52,26 @@ SELECT * FROM zemployees.
   MOVE zemployees-forename  TO itab01-forename,
   MOVE zemployees-title     TO itab01-title,
   MOVE zemployees-dob       TO itab01-dob, "los is not present here since it does not have a field in the zemployees table
+APPEND itab01. "if append is not added, the header record will simply get overwritten in each iteration of loop
 ENDSELECT.
+
+
+* Move-Corresponding
+
+SELECT * FROM zemployees
+  MOVE-CORRESPONDING zemployees to itab01. "you need to make sure that both fields have matching data types and lengths
+
+  APPEND itab01.
+ENDSELECT.
+
+DATA: BEGIN OF itab05 OCCURS 0,
+      INCLUDE STRUCTURE itab01. "include table structure from an internal table 
+      INCLUDE STRUCTURE zemployees. "include table structure from ABAP dictionary
+DATA END OF itab05.
+
+SELECT * FROM zemployees INTO CORRESPONDING FIELDS OF TABLE itab01.
+
+SELECT surname forename dob FROM zemployees INTO CORRESPONDING FIELDS OF TABLE itab01. "if you want to specifically move certain fields
+
 
 
