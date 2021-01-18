@@ -104,7 +104,11 @@ LOOP AT itab01.
 ENDLOOP.
 
 
+* Describe and Insert
 
+DESCRIBE TABLE itab01 LINES line_cnt. "This statement can be used to find out information about the content of an internal table, including the number of records the table holds, the reserve memory space used, and the type of table it is
+
+INSERT itab01 INDEX line_cnt. "the APPEND statement automatically inserts the new record at the end of the table. If you want to add a record somewhere in the middle, the INSERT statement should be used. 
 
 
 
