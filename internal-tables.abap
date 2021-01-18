@@ -13,6 +13,7 @@ TYPES: BEGIN OF line01_typ, "Line type defined here
         surname LIKE zemployees-surname,
         dob     LIKE zemployees-dob,
        END OF line01_typ.
+
 TYPES itab02_typ TYPE STANDARD TABLE OF line01_typ. "Table type defined here
 DATA itab02 TYPE itab02_typ. "Table defined here 
 DATA wa_itab02 TYPE line01_typ. "Create separate work area
@@ -111,7 +112,11 @@ DESCRIBE TABLE itab01 LINES line_cnt. "This statement can be used to find out in
 INSERT itab01 INDEX line_cnt. "the APPEND statement automatically inserts the new record at the end of the table. If you want to add a record somewhere in the middle, the INSERT statement should be used. 
 
 
+* Delete 
 
+DELETE itab02 INDEX 5. "Note this only applies to standard and sorted tables as only these two types of tables have an index.
+
+DELETE itab01 WHERE surname = 'SMITH'. "this can be combined with other logic to locate the record(s) which should be deleted
 
 
 
