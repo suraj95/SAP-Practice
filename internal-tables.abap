@@ -119,4 +119,46 @@ DELETE itab02 INDEX 5. "Note this only applies to standard and sorted tables as 
 DELETE itab01 WHERE surname = 'SMITH'. "this can be combined with other logic to locate the record(s) which should be deleted
 
 
+* Work Area Differences
+
+LOOP at itab02 INTO wa_itab02. 
+  IF wa_itab02-surname = 'JONES'.
+    wa_itab02-surname = 'SMITH'.
+    MODIFY itab02 FROM wa_itab02. "Modify
+  ENDIF.
+ENDLOOP.
+
+DESCRIBE TABLE itab02 LINES line_cnt.
+  INSERT wa_itab02 INTO itab02 INDEX line_cnt. "Insert
+
+
+* Delete a Table with a Header Line
+
+CLEAR itab01. "Clears the header line only 
+CLEAR itab01[]. "Clears the body
+
+REFRESH itab01. "Clears all records from the table, but it does not clear the header record
+
+FREE itab01. "Clears out not only the internal table, but also frees up the memory which it was using.
+
+
+* Delete a Table with Work Area
+
+CLEAR itab01. "Clears the whole contents of the table (one without a HEADER file) without needing to add the [].
+CLEAR wa_itab01. "Another CLEAR statement must be used to empty the work area
+
+REFRESH itab01. "The same applies to the REFRESH and FREE statements. 
+CLEAR wa_itab01.
+
+FREE itab01.
+CLEAR wa_itab01.
+
+
+
+
+
+
+
+
+
 
