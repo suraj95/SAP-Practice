@@ -74,4 +74,25 @@ SELECT * FROM zemployees INTO CORRESPONDING FIELDS OF TABLE itab01.
 SELECT surname forename dob FROM zemployees INTO CORRESPONDING FIELDS OF TABLE itab01. "if you want to specifically move certain fields
 
 
+* Filling Internal Tables with Work Area
+
+ "refer to table definition in the second section (New Style Internal Table with Separate Work Area)
+
+SELECT surname dob FROM zemployees "fill using SELECT statement
+  INTO wa_itab02.
+  APPEND wa_itab02 to itab02.
+ENDSELECT.
+
+SELECT * FROM zemployees "fill using array fetch
+  INTO CORRESPONDING FIELDS OF TABLE itab02.
+
+
+
+
+
+
+
+
+
+
 
