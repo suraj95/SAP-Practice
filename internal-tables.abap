@@ -87,6 +87,21 @@ SELECT * FROM zemployees "fill using array fetch
   INTO CORRESPONDING FIELDS OF TABLE itab02.
 
 
+* Using Internal Tables One Line at a Time
+
+LOOP AT itab01. "the header line is filled with data before being written to the output screen:
+  WRITE: / itab01-surname, itab01-forename. 
+ENDLOOP.
+
+
+* Modify
+
+LOOP AT itab01.
+  IF itab01-surname = 'JONES'. "the MODIFY statement here will not create a brand new record, but will replace the existing JONES record in the table.
+    itab01-surname = 'SMITH'.
+    MODIFY itab01.
+  ENDIF.
+ENDLOOP.
 
 
 
