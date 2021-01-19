@@ -47,6 +47,10 @@ PERFORM itab02_fill_again USING z_field1 z_field2. "Value of z_field2 will chang
 
 PERFORM itab02_write TABLES itab02. 
 
+PERFORM itab02_multi TABLES itab02 USING z_field1 z_field2.
+
+
+
 
 
 
