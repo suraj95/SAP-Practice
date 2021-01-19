@@ -112,12 +112,32 @@ DESCRIBE TABLE itab01 LINES line_cnt. "This statement can be used to find out in
 INSERT itab01 INDEX line_cnt. "the APPEND statement automatically inserts the new record at the end of the table. If you want to add a record somewhere in the middle, the INSERT statement should be used. 
 
 
-* Delete 
+* Read Records
+
+READ TABLE itab01 INDEX 5. "Read with index can be upto 14 times faster than table key
+
+READ TABLE itab01 WITH KEY "If there are multiple occurences (a non-unique key like surname is used), then system will sequentially select them
+      employee = 10000007.
+
+
+* Delete Records
 
 DELETE itab02 INDEX 5. "Note this only applies to standard and sorted tables as only these two types of tables have an index.
 
 DELETE itab01 WHERE surname = 'SMITH'. "this can be combined with other logic to locate the record(s) which should be deleted
 
+
+* Sort Records
+
+SORT itab01. "Without any additions, this will sort the records in ascending order by the table’s unique key. 
+
+SORT itab01 BY surname. "If you are sorting by language-specific criteria, AS TEXT should be added between the table name and BY addition
+
+SORT itab01 AS TEXT BY surname forename. "you can list up to 250 fields if desired
+
+SORT itab01 BY surname forename AS TEXT. "If you only wanted AS TEXT to apply to forename
+
+SORT itab01 DESCENDING AS TEXT BY surname forename. "By default, the system will sort records in ascending order but this can be changed to descending
 
 * Work Area Differences
 
