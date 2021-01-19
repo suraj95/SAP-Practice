@@ -1,12 +1,10 @@
 
 * Includes
 
-DATA line_cnt TYPE i.
-****************************************
-
 "This block of code refers to Internal Table itab-02 created in second section of internal-tables abap file.
 "We can use the table by writing the table definition in an INCLUDE file called Z_EMPLOYEE_DEFINITIONS.
 
+DATA line_cnt TYPE i.
 INCLUDE Z_EMPLOYEE_DEFINITIONS.
 TABLES: zemployees.
 
@@ -37,10 +35,12 @@ READ TABLE itab-02 INTO wa_itab02
 
 * Sub-Routines
 
-PERFORM itab02_fill.
+PERFORM itab02_fill. "When the PERFORM statement is reached as the program executes, the sub-routine created will be triggered, meaning that the array fetch is performed in exactly the same way as previously. 
 
+DATA z_field1 LIKE zemployees-surname.
+DATA z_field2 LIKE zemployees-surname.
 
-
+PERFORM itab02_fill_again USING z_field1 z_field2.
 
 
 
