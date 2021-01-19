@@ -3,11 +3,16 @@
 *&-------------------------------------------------------------------------------------------
 *     text
 *&-------------------------------------------------------------------------------------------
-* --> P_Z_FIELD1    text
-* <-- p_Z_FIELD2    text
+* --> P_ZSURNAME    text
+* <-- p_ZFORENAME    text
 *&-------------------------------------------------------------------------------------------
-form itab02_fill_again using p_z_field1
-                             p_z_field2.
+form itab02_fill_again using p_zsurname
+                             p_zforename.
+
+write / p_zsurname.
+write / p_zforename.
+
+p_zsurname = 'abcde'.
 
 endform.  "itab02_fill_again
 

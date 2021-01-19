@@ -40,7 +40,13 @@ PERFORM itab02_fill. "When the PERFORM statement is reached as the program execu
 DATA z_field1 LIKE zemployees-surname.
 DATA z_field2 LIKE zemployees-surname.
 
-PERFORM itab02_fill_again USING z_field1 z_field2.
+z_field1 = 'ANDREWS'.
+z_field2 = 'SUSAN'.
+
+PERFORM itab02_fill_again USING z_field1 z_field2. "Value of z_field2 will change to 'abcd' because of Sub-Routine
+
+PERFORM itab02_write TABLES itab02. 
+
 
 
 
