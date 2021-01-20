@@ -89,7 +89,7 @@ SELECT-OPTIONS my_dob FOR zemployees-dob NO-EXTENSION.
 * COMMENTS
 
 SELECTION-SCREEN COMMENT /40(15) text-001. "Comments allow text to be placed on screen without creating new fields.
-SELECTION-SCREEN COMMENT /40(15) comm1.
+SELECTION-SCREEN COMMENT /40(15) comm1. "starts at position 40 and can hold 15 characters
 
 INITIALIZATION.
   
