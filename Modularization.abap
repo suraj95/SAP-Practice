@@ -35,7 +35,10 @@ READ TABLE itab-02 INTO wa_itab02
 
 * Sub-Routines
 
-PERFORM itab02_fill. "When the PERFORM statement is reached as the program executes, the sub-routine created will be triggered, meaning that the array fetch is performed in exactly the same way as previously. 
+"When the PERFORM statement is reached as the program executes, the sub-routine created will 
+"be triggered, meaning that the array fetch is performed in exactly the same way as previously.
+
+PERFORM itab02_fill.  
 
 DATA z_field1 LIKE zemployees-surname.
 DATA z_field2 LIKE zemployees-surname.
