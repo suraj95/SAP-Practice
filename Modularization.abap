@@ -50,6 +50,12 @@ PERFORM itab02_write TABLES itab02.
 PERFORM itab02_multi TABLES itab02 USING z_field1 z_field2.
 
 
+* Sub-Routines - External Programs
+
+PERFORM sub_1 in PROGRAM zemployee_hire USING z_field1 z_field2. "Generally to do this, though, one should create function modules instead. 
+
+PERFORM sub_1(zemployee_hire) TABLES itab02 USING z_field1 z_field2. 
+
 
 
 
